@@ -19,6 +19,7 @@ class LoginPageWidget extends StatefulWidget {
 
 class _LoginPageWidgetState extends State<LoginPageWidget> {
   TextEditingController? ageCreateController;
+  TextEditingController? displayLastNameController;
   TextEditingController? displayNameController;
   TextEditingController? emailAddressCreateController;
   TextEditingController? passwordCreateController;
@@ -35,6 +36,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   void initState() {
     super.initState();
     ageCreateController = TextEditingController();
+    displayLastNameController = TextEditingController();
     displayNameController = TextEditingController();
     emailAddressCreateController = TextEditingController();
     passwordCreateController = TextEditingController();
@@ -461,7 +463,61 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             fontSize: 14,
                                             fontWeight: FontWeight.normal,
                                           ),
-                                      hintText: 'Ingresa tu nombre completo',
+                                      hintText: 'Ingresa tu nombre ',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: Color(0xFF57636C),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.white,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.white,
+                                          width: 1,
+                                        ),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20, 15, 20, 15),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color: Color(0xFF0F1113),
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 20, 0),
+                                  child: TextFormField(
+                                    controller: displayLastNameController,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .bodyText2
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: Color(0xFF57636C),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                      hintText: 'Ingresa tus apellidos',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
@@ -798,7 +854,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   alignment: AlignmentDirectional(0, 0.6),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 24, 0, 0),
+                                        0, 35, 0, 0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         if (passwordCreateController?.text !=
@@ -831,6 +887,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           pregnancy: checkboxListTileValue,
                                           displayName:
                                               displayNameController!.text,
+                                          displayLastName:
+                                              displayLastNameController!.text,
                                         );
                                         await UsersRecord.collection
                                             .doc(user.uid)
@@ -865,137 +923,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 20, 12),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 24, 0, 0),
-                                        child: Text(
-                                          'Registrarme usando otros métodos',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0x98FFFFFF),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24, 8, 24, 8),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      InkWell(
-                                        onTap: () async {
-                                          final user =
-                                              await signInWithGoogle(context);
-                                          if (user == null) {
-                                            return;
-                                          }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomePageWidget(),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
-                                        child: Container(
-                                          width: 50,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFF0F1113),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 5,
-                                                color: Color(0x3314181B),
-                                                offset: Offset(0, 2),
-                                              )
-                                            ],
-                                            shape: BoxShape.circle,
-                                          ),
-                                          alignment: AlignmentDirectional(0, 0),
-                                          child: InkWell(
-                                            onTap: () async {
-                                              final user =
-                                                  await signInWithGoogle(
-                                                      context);
-                                              if (user == null) {
-                                                return;
-                                              }
-                                              await Navigator
-                                                  .pushAndRemoveUntil(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HomePageWidget(),
-                                                ),
-                                                (r) => false,
-                                              );
-                                            },
-                                            child: FaIcon(
-                                              FontAwesomeIcons.google,
-                                              color: Colors.white,
-                                              size: 24,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      InkWell(
-                                        onTap: () async {
-                                          final user =
-                                              await signInWithFacebook(context);
-                                          if (user == null) {
-                                            return;
-                                          }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  HomePageWidget(),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
-                                        child: Container(
-                                          width: 50,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFF0F1113),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 5,
-                                                color: Color(0x3314181B),
-                                                offset: Offset(0, 2),
-                                              )
-                                            ],
-                                            shape: BoxShape.circle,
-                                          ),
-                                          alignment: AlignmentDirectional(0, 0),
-                                          child: FaIcon(
-                                            FontAwesomeIcons.facebookF,
-                                            color: Colors.white,
-                                            size: 24,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
                                   ),
                                 ),
                               ],

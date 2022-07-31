@@ -97,7 +97,7 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFFF1F4F8),
+      backgroundColor: Color(0xFFF3E4DD),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: Column(
@@ -180,7 +180,8 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(4, 12, 0, 0),
                                 child: Text(
-                                  'How to cruise at sunset safely',
+                                  'Dieta y patrones de alimentación en niños de 6 meses a 2 años',
+                                  textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .title3
                                       .override(
@@ -202,9 +203,10 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            4, 4, 16, 0),
+                                            4, 10, 16, 0),
                                         child: Text(
-                                          'Learn the basics of finding what you need to have in order to be able to cruise close to the sunset.',
+                                          'A esta edad, su bebé probablemente comerá alrededor de 4 a 6 veces por día, pero comerá más en cada alimentación que en los primeros 6 meses.',
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
@@ -225,117 +227,124 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                       ).animated(
                           [animationsMap['containerOnPageLoadAnimation1']!]),
                     ),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 5,
-                            color: Color(0x28000000),
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12),
-                          topLeft: Radius.circular(0),
-                          topRight: Radius.circular(0),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF2DFD7),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Color(0x28000000),
+                              offset: Offset(0, 2),
+                            )
+                          ],
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(12),
+                            bottomRight: Radius.circular(12),
+                            topLeft: Radius.circular(0),
+                            topRight: Radius.circular(0),
+                          ),
                         ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: 400,
-                              child: Stack(
-                                children: [
-                                  InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.fade,
-                                          child: FlutterFlowExpandedImageView(
-                                            image: Image.asset(
-                                              'assets/images/15171.jpg',
-                                              fit: BoxFit.contain,
+                        child: Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 400,
+                                child: Stack(
+                                  children: [
+                                    InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          PageTransition(
+                                            type: PageTransitionType.fade,
+                                            child: FlutterFlowExpandedImageView(
+                                              image: Image.asset(
+                                                'assets/images/15171.jpg',
+                                                fit: BoxFit.contain,
+                                              ),
+                                              allowRotation: true,
+                                              tag: 'surfLesson',
+                                              useHeroAnimation: true,
                                             ),
-                                            allowRotation: true,
-                                            tag: 'surfLesson',
-                                            useHeroAnimation: true,
+                                          ),
+                                        );
+                                      },
+                                      child: Hero(
+                                        tag: 'surfLesson',
+                                        transitionOnUserGestures: true,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            'assets/images/15171.jpg',
+                                            width: double.infinity,
+                                            height: 400,
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
-                                      );
-                                    },
-                                    child: Hero(
-                                      tag: 'surfLesson',
-                                      transitionOnUserGestures: true,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          'assets/images/15171.jpg',
-                                          width: double.infinity,
-                                          height: 400,
-                                          fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(4, 12, 0, 0),
+                                child: Text(
+                                  'Dieta y patrones de alimentación en niños de 6 meses a 2 años',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .title3
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF0F1113),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            4, 10, 16, 0),
+                                        child: Text(
+                                          'A esta edad, su bebé probablemente comerá alrededor de 4 a 6 veces por día, pero comerá más en cada alimentación que en los primeros 6 meses.',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText2
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                color: Color(0xFF57636C),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(4, 12, 0, 0),
-                              child: Text(
-                                'How to cruise at sunset safely',
-                                style: FlutterFlowTheme.of(context)
-                                    .title3
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF0F1113),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4, 4, 16, 0),
-                                      child: Text(
-                                        'Learn the basics of finding what you need to have in order to be able to cruise close to the sunset.',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText2
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF57636C),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ).animated(
-                        [animationsMap['containerOnPageLoadAnimation2']!]),
+                      ).animated(
+                          [animationsMap['containerOnPageLoadAnimation2']!]),
+                    ),
                   ],
                 ),
               ),

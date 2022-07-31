@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../create_story_page/create_story_page_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -136,13 +137,15 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(26),
-                                    child: Image.network(
-                                      listViewStoriesRecord.imageStory!,
-                                      width: 36,
-                                      height: 36,
-                                      fit: BoxFit.cover,
+                                  AuthUserStreamWidget(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(26),
+                                      child: Image.network(
+                                        currentUserPhoto,
+                                        width: 36,
+                                        height: 36,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                   Expanded(
@@ -190,25 +193,6 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                                   },
                                                 ),
                                               ),
-                                              Text(
-                                                formatNumber(
-                                                  listViewStoriesRecord
-                                                      .viewsCount!,
-                                                  formatType:
-                                                      FormatType.compact,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText2
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(10, 0, 8, 0),
@@ -228,25 +212,6 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                                         'IconButton pressed ...');
                                                   },
                                                 ),
-                                              ),
-                                              Text(
-                                                formatNumber(
-                                                  listViewStoriesRecord
-                                                      .comentsCount!,
-                                                  formatType:
-                                                      FormatType.compact,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText2
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
                                               ),
                                             ],
                                           ),

@@ -30,6 +30,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   @BuiltValueField(wireName: 'phone_number')
   String? get phoneNumber;
 
+  @BuiltValueField(wireName: 'display_last_name')
+  String? get displayLastName;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -41,7 +44,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..uid = ''
     ..ageCreate = 0
     ..pregnancy = false
-    ..phoneNumber = '';
+    ..phoneNumber = ''
+    ..displayLastName = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -73,6 +77,7 @@ Map<String, dynamic> createUsersRecordData({
   int? ageCreate,
   bool? pregnancy,
   String? phoneNumber,
+  String? displayLastName,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -85,7 +90,8 @@ Map<String, dynamic> createUsersRecordData({
         ..createdTime = createdTime
         ..ageCreate = ageCreate
         ..pregnancy = pregnancy
-        ..phoneNumber = phoneNumber,
+        ..phoneNumber = phoneNumber
+        ..displayLastName = displayLastName,
     ),
   );
 

@@ -35,13 +35,6 @@ class _$AllStoriesRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.imageStory;
-    if (value != null) {
-      result
-        ..add('image_story')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.contentStory;
     if (value != null) {
       result
@@ -113,10 +106,6 @@ class _$AllStoriesRecordSerializer
           result.nameStory = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'image_story':
-          result.imageStory = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'content_story':
           result.contentStory = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -160,8 +149,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
   @override
   final String? nameStory;
   @override
-  final String? imageStory;
-  @override
   final String? contentStory;
   @override
   final int? comentsCount;
@@ -183,7 +170,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
   _$AllStoriesRecord._(
       {this.idStory,
       this.nameStory,
-      this.imageStory,
       this.contentStory,
       this.comentsCount,
       this.viewsCount,
@@ -207,7 +193,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
     return other is AllStoriesRecord &&
         idStory == other.idStory &&
         nameStory == other.nameStory &&
-        imageStory == other.imageStory &&
         contentStory == other.contentStory &&
         comentsCount == other.comentsCount &&
         viewsCount == other.viewsCount &&
@@ -226,10 +211,8 @@ class _$AllStoriesRecord extends AllStoriesRecord {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc(0, idStory.hashCode),
-                                        nameStory.hashCode),
-                                    imageStory.hashCode),
+                                $jc($jc(0, idStory.hashCode),
+                                    nameStory.hashCode),
                                 contentStory.hashCode),
                             comentsCount.hashCode),
                         viewsCount.hashCode),
@@ -244,7 +227,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
     return (newBuiltValueToStringHelper(r'AllStoriesRecord')
           ..add('idStory', idStory)
           ..add('nameStory', nameStory)
-          ..add('imageStory', imageStory)
           ..add('contentStory', contentStory)
           ..add('comentsCount', comentsCount)
           ..add('viewsCount', viewsCount)
@@ -267,10 +249,6 @@ class AllStoriesRecordBuilder
   String? _nameStory;
   String? get nameStory => _$this._nameStory;
   set nameStory(String? nameStory) => _$this._nameStory = nameStory;
-
-  String? _imageStory;
-  String? get imageStory => _$this._imageStory;
-  set imageStory(String? imageStory) => _$this._imageStory = imageStory;
 
   String? _contentStory;
   String? get contentStory => _$this._contentStory;
@@ -309,7 +287,6 @@ class AllStoriesRecordBuilder
     if ($v != null) {
       _idStory = $v.idStory;
       _nameStory = $v.nameStory;
-      _imageStory = $v.imageStory;
       _contentStory = $v.contentStory;
       _comentsCount = $v.comentsCount;
       _viewsCount = $v.viewsCount;
@@ -341,7 +318,6 @@ class AllStoriesRecordBuilder
         new _$AllStoriesRecord._(
             idStory: idStory,
             nameStory: nameStory,
-            imageStory: imageStory,
             contentStory: contentStory,
             comentsCount: comentsCount,
             viewsCount: viewsCount,

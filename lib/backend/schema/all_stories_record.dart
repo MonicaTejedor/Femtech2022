@@ -17,17 +17,8 @@ abstract class AllStoriesRecord
   @BuiltValueField(wireName: 'name_story')
   String? get nameStory;
 
-  @BuiltValueField(wireName: 'image_story')
-  String? get imageStory;
-
   @BuiltValueField(wireName: 'content_story')
   String? get contentStory;
-
-  @BuiltValueField(wireName: 'coments_count')
-  int? get comentsCount;
-
-  @BuiltValueField(wireName: 'views_count')
-  int? get viewsCount;
 
   @BuiltValueField(wireName: 'date_create')
   DateTime? get dateCreate;
@@ -45,10 +36,7 @@ abstract class AllStoriesRecord
   static void _initializeBuilder(AllStoriesRecordBuilder builder) => builder
     ..idStory = ''
     ..nameStory = ''
-    ..imageStory = ''
     ..contentStory = ''
-    ..comentsCount = 0
-    ..viewsCount = 0
     ..userStory = ''
     ..lovedStory = false;
 
@@ -76,10 +64,7 @@ abstract class AllStoriesRecord
 Map<String, dynamic> createAllStoriesRecordData({
   String? idStory,
   String? nameStory,
-  String? imageStory,
   String? contentStory,
-  int? comentsCount,
-  int? viewsCount,
   DateTime? dateCreate,
   String? userStory,
   bool? lovedStory,
@@ -90,10 +75,7 @@ Map<String, dynamic> createAllStoriesRecordData({
       (a) => a
         ..idStory = idStory
         ..nameStory = nameStory
-        ..imageStory = imageStory
         ..contentStory = contentStory
-        ..comentsCount = comentsCount
-        ..viewsCount = viewsCount
         ..dateCreate = dateCreate
         ..userStory = userStory
         ..lovedStory = lovedStory,

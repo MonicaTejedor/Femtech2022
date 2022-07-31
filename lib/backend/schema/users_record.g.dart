@@ -74,6 +74,13 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.displayLastName;
+    if (value != null) {
+      result
+        ..add('display_last_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -128,6 +135,10 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.phoneNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'display_last_name':
+          result.displayLastName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -159,6 +170,8 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? phoneNumber;
   @override
+  final String? displayLastName;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -173,6 +186,7 @@ class _$UsersRecord extends UsersRecord {
       this.ageCreate,
       this.pregnancy,
       this.phoneNumber,
+      this.displayLastName,
       this.ffRef})
       : super._();
 
@@ -195,6 +209,7 @@ class _$UsersRecord extends UsersRecord {
         ageCreate == other.ageCreate &&
         pregnancy == other.pregnancy &&
         phoneNumber == other.phoneNumber &&
+        displayLastName == other.displayLastName &&
         ffRef == other.ffRef;
   }
 
@@ -207,14 +222,16 @@ class _$UsersRecord extends UsersRecord {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, email.hashCode),
-                                    displayName.hashCode),
-                                photoUrl.hashCode),
-                            uid.hashCode),
-                        createdTime.hashCode),
-                    ageCreate.hashCode),
-                pregnancy.hashCode),
-            phoneNumber.hashCode),
+                                $jc(
+                                    $jc($jc(0, email.hashCode),
+                                        displayName.hashCode),
+                                    photoUrl.hashCode),
+                                uid.hashCode),
+                            createdTime.hashCode),
+                        ageCreate.hashCode),
+                    pregnancy.hashCode),
+                phoneNumber.hashCode),
+            displayLastName.hashCode),
         ffRef.hashCode));
   }
 
@@ -229,6 +246,7 @@ class _$UsersRecord extends UsersRecord {
           ..add('ageCreate', ageCreate)
           ..add('pregnancy', pregnancy)
           ..add('phoneNumber', phoneNumber)
+          ..add('displayLastName', displayLastName)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -269,6 +287,11 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get phoneNumber => _$this._phoneNumber;
   set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
 
+  String? _displayLastName;
+  String? get displayLastName => _$this._displayLastName;
+  set displayLastName(String? displayLastName) =>
+      _$this._displayLastName = displayLastName;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -288,6 +311,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _ageCreate = $v.ageCreate;
       _pregnancy = $v.pregnancy;
       _phoneNumber = $v.phoneNumber;
+      _displayLastName = $v.displayLastName;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -319,6 +343,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             ageCreate: ageCreate,
             pregnancy: pregnancy,
             phoneNumber: phoneNumber,
+            displayLastName: displayLastName,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

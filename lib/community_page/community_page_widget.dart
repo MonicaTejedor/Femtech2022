@@ -328,15 +328,6 @@ class _CommunityPageWidgetState extends State<CommunityPageWidget> {
                                     ],
                                     borderRadius: BorderRadius.circular(8),
                                   ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.network(
-                                      socialFeedAllStoriesRecord.imageStory!,
-                                      width: 100,
-                                      height: 300,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
                                 ),
                               ),
                               Padding(
@@ -383,30 +374,6 @@ class _CommunityPageWidgetState extends State<CommunityPageWidget> {
                                                   size: 25,
                                                 ),
                                               ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(4, 0, 0, 0),
-                                                child: Text(
-                                                  formatNumber(
-                                                    socialFeedAllStoriesRecord
-                                                        .viewsCount!,
-                                                    formatType:
-                                                        FormatType.compact,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText2
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            Color(0xFF4B39EF),
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                ),
-                                              ),
                                             ],
                                           ),
                                         ),
@@ -417,28 +384,6 @@ class _CommunityPageWidgetState extends State<CommunityPageWidget> {
                                               Icons.mode_comment_outlined,
                                               color: Color(0xFF4B39EF),
                                               size: 24,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4, 0, 0, 0),
-                                              child: Text(
-                                                formatNumber(
-                                                  socialFeedAllStoriesRecord
-                                                      .comentsCount!,
-                                                  formatType:
-                                                      FormatType.compact,
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText2
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF4B39EF),
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                              ),
                                             ),
                                           ],
                                         ),

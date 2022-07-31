@@ -42,7 +42,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 15),
+              padding: EdgeInsetsDirectional.fromSTEB(3, 25, 0, 15),
               child: AuthUserStreamWidget(
                 child: Text(
                   currentUserDisplayName,
