@@ -22,14 +22,6 @@ class _$LovedStoriesRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.idStory;
-    if (value != null) {
-      result
-        ..add('id_story')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.storyOwner;
     if (value != null) {
       result
@@ -44,6 +36,14 @@ class _$LovedStoriesRecordSerializer
         ..add('date_loved')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
+    }
+    value = object.idLovedStories;
+    if (value != null) {
+      result
+        ..add('id_loved_stories')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
     }
     value = object.ffRef;
     if (value != null) {
@@ -68,12 +68,6 @@ class _$LovedStoriesRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'id_story':
-          result.idStory = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'story_owner':
           result.storyOwner = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -83,6 +77,12 @@ class _$LovedStoriesRecordSerializer
         case 'date_loved':
           result.dateLoved = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'id_loved_stories':
+          result.idLovedStories = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -99,11 +99,11 @@ class _$LovedStoriesRecordSerializer
 
 class _$LovedStoriesRecord extends LovedStoriesRecord {
   @override
-  final DocumentReference<Object?>? idStory;
-  @override
   final DocumentReference<Object?>? storyOwner;
   @override
   final DateTime? dateLoved;
+  @override
+  final DocumentReference<Object?>? idLovedStories;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -112,7 +112,7 @@ class _$LovedStoriesRecord extends LovedStoriesRecord {
       (new LovedStoriesRecordBuilder()..update(updates))._build();
 
   _$LovedStoriesRecord._(
-      {this.idStory, this.storyOwner, this.dateLoved, this.ffRef})
+      {this.storyOwner, this.dateLoved, this.idLovedStories, this.ffRef})
       : super._();
 
   @override
@@ -128,26 +128,26 @@ class _$LovedStoriesRecord extends LovedStoriesRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LovedStoriesRecord &&
-        idStory == other.idStory &&
         storyOwner == other.storyOwner &&
         dateLoved == other.dateLoved &&
+        idLovedStories == other.idLovedStories &&
         ffRef == other.ffRef;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, idStory.hashCode), storyOwner.hashCode),
-            dateLoved.hashCode),
+        $jc($jc($jc(0, storyOwner.hashCode), dateLoved.hashCode),
+            idLovedStories.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LovedStoriesRecord')
-          ..add('idStory', idStory)
           ..add('storyOwner', storyOwner)
           ..add('dateLoved', dateLoved)
+          ..add('idLovedStories', idLovedStories)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -157,10 +157,6 @@ class LovedStoriesRecordBuilder
     implements Builder<LovedStoriesRecord, LovedStoriesRecordBuilder> {
   _$LovedStoriesRecord? _$v;
 
-  DocumentReference<Object?>? _idStory;
-  DocumentReference<Object?>? get idStory => _$this._idStory;
-  set idStory(DocumentReference<Object?>? idStory) => _$this._idStory = idStory;
-
   DocumentReference<Object?>? _storyOwner;
   DocumentReference<Object?>? get storyOwner => _$this._storyOwner;
   set storyOwner(DocumentReference<Object?>? storyOwner) =>
@@ -169,6 +165,11 @@ class LovedStoriesRecordBuilder
   DateTime? _dateLoved;
   DateTime? get dateLoved => _$this._dateLoved;
   set dateLoved(DateTime? dateLoved) => _$this._dateLoved = dateLoved;
+
+  DocumentReference<Object?>? _idLovedStories;
+  DocumentReference<Object?>? get idLovedStories => _$this._idLovedStories;
+  set idLovedStories(DocumentReference<Object?>? idLovedStories) =>
+      _$this._idLovedStories = idLovedStories;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -181,9 +182,9 @@ class LovedStoriesRecordBuilder
   LovedStoriesRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _idStory = $v.idStory;
       _storyOwner = $v.storyOwner;
       _dateLoved = $v.dateLoved;
+      _idLovedStories = $v.idLovedStories;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -207,9 +208,9 @@ class LovedStoriesRecordBuilder
   _$LovedStoriesRecord _build() {
     final _$result = _$v ??
         new _$LovedStoriesRecord._(
-            idStory: idStory,
             storyOwner: storyOwner,
             dateLoved: dateLoved,
+            idLovedStories: idLovedStories,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ViewStorieWidget extends StatefulWidget {
@@ -29,7 +30,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: Color(0xFF57636C),
+            color: Color(0xFF4B39EF),
             size: 30,
           ),
           onPressed: () async {
@@ -54,8 +55,9 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                 child: SizedBox(
                   width: 50,
                   height: 50,
-                  child: CircularProgressIndicator(
+                  child: SpinKitChasingDots(
                     color: FlutterFlowTheme.of(context).primaryColor,
+                    size: 50,
                   ),
                 ),
               );
@@ -165,7 +167,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                               children: [
                                 Icon(
                                   Icons.favorite_border,
-                                  color: Color(0xFF57636C),
+                                  color: Color(0xFF4B39EF),
                                   size: 24,
                                 ),
                                 Padding(
@@ -180,7 +182,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: Color(0xFF4B39EF),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -195,7 +197,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: Color(0xFF4B39EF),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -206,7 +208,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                                       24, 0, 0, 0),
                                   child: Icon(
                                     Icons.mode_comment_outlined,
-                                    color: Color(0xFF57636C),
+                                    color: Color(0xFF4B39EF),
                                     size: 24,
                                   ),
                                 ),
@@ -222,7 +224,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: Color(0xFF4B39EF),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -237,7 +239,7 @@ class _ViewStorieWidgetState extends State<ViewStorieWidget> {
                                         .bodyText1
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: Color(0xFF4B39EF),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),

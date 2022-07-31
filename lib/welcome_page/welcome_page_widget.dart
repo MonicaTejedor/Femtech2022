@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page_no_auth/home_page_no_auth_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -42,7 +43,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0xFF4B39EF),
+                              color: Color(0xFF736CED),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -56,9 +57,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/ON_explore@3x.png',
-                                        width: 350,
-                                        height: 400,
+                                        'assets/images/logo.png',
+                                        width: 250,
+                                        height: 300,
                                         fit: BoxFit.fitWidth,
                                       ),
                                     ),
@@ -70,16 +71,21 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Text(
-                                        'Bienvenida a (name app)',
-                                        style: FlutterFlowTheme.of(context)
-                                            .title1
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.white,
-                                              fontSize: 32,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            60, 0, 0, 20),
+                                        child: Text(
+                                          'Mom\'s App',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .title1
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                color: Colors.white,
+                                                fontSize: 36,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -92,7 +98,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'La app que ayuda  a las mamás a sentirse mejor con ellas mismas y con su bebé\n\n\n\nDesliza hacia arriba ',
+                                          'Bienvenida a la app que ayuda  a las mamás a sentirse mejor con ellas mismas y con su bebé\n\n\n\nDesliza hacia arriba ',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
@@ -114,7 +120,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0xFF0F1113),
+                              color: Color(0xFFD4C1EC),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -146,12 +152,12 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             11, 0, 0, 0),
                                         child: Text(
-                                          '¡Únete a la comunidad\nde (name app)!',
+                                          '¡Únete a la comunidad\nde Mom\'s App!',
                                           style: FlutterFlowTheme.of(context)
                                               .title1
                                               .override(
                                                 fontFamily: 'Outfit',
-                                                color: Colors.white,
+                                                color: Color(0xFF736CED),
                                                 fontSize: 32,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -214,16 +220,16 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                           options: FFButtonOptions(
                                             width: 170,
                                             height: 50,
-                                            color: Colors.white,
+                                            color: Color(0xFF736CED),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .subtitle2
                                                     .override(
                                                       fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF39D2C0),
+                                                      color: Color(0xFFFEF9FF),
                                                       fontSize: 16,
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                          FontWeight.w600,
                                                     ),
                                             elevation: 2,
                                             borderSide: BorderSide(

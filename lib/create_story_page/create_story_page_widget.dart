@@ -9,6 +9,7 @@ import '../flutter_flow/upload_media.dart';
 import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateStoryPageWidget extends StatefulWidget {
@@ -38,14 +39,17 @@ class _CreateStoryPageWidgetState extends State<CreateStoryPageWidget> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: Text(
-          'Crear historia nueva',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Lexend Deca',
-                color: Color(0xFF090F13),
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+        title: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+          child: Text(
+            'Crear historia nueva',
+            style: FlutterFlowTheme.of(context).title2.override(
+                  fontFamily: 'Lexend Deca',
+                  color: Color(0xFF4B39EF),
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
         ),
         actions: [
           Padding(
@@ -108,7 +112,9 @@ class _CreateStoryPageWidgetState extends State<CreateStoryPageWidget> {
               ),
               style: FlutterFlowTheme.of(context).title3.override(
                     fontFamily: 'Poppins',
-                    fontSize: 20,
+                    color: Color(0xFF736CED),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
                   ),
               textAlign: TextAlign.center,
             ),

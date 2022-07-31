@@ -1,12 +1,15 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../community_page/community_page_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../nutrition_page/nutrition_page_widget.dart';
 import '../profile_page/profile_page_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_search/text_search.dart';
 
@@ -33,7 +36,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF4B39EF),
+        backgroundColor: Color(0xFFF2DFD7),
         automaticallyImplyLeading: false,
         title: Column(
           mainAxisSize: MainAxisSize.max,
@@ -45,7 +48,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   currentUserDisplayName,
                   style: FlutterFlowTheme.of(context).title2.override(
                         fontFamily: 'Outfit',
-                        color: Colors.white,
+                        color: Color(0xFF736CED),
                         fontSize: 28,
                         fontWeight: FontWeight.normal,
                       ),
@@ -64,7 +67,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               buttonSize: 60,
               icon: Icon(
                 Icons.notifications_none,
-                color: Colors.white,
+                color: Color(0xFF736CED),
                 size: 30,
               ),
               onPressed: () {
@@ -88,7 +91,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 width: double.infinity,
                 height: 70,
                 decoration: BoxDecoration(
-                  color: Color(0xFF4B39EF),
+                  color: Color(0xFFF2DFD7),
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 5,
@@ -154,7 +157,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Container(
                 width: double.infinity,
                 height: 60,
-                decoration: BoxDecoration(),
+                decoration: BoxDecoration(
+                  color: Color(0xFFF2DFD7),
+                ),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(80, 10, 80, 10),
                   child: FFButtonWidget(
@@ -201,7 +206,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 child: Container(
                   width: double.infinity,
                   height: 110,
-                  decoration: BoxDecoration(),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF2DFD7),
+                  ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                     child: ListView(
@@ -229,36 +236,50 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 4),
-                                    child: Icon(
-                                      Icons.supervised_user_circle_sharp,
-                                      color: Color(0xFF57636C),
-                                      size: 44,
+                              child: InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 400),
+                                      reverseDuration:
+                                          Duration(milliseconds: 400),
+                                      child: CommunityPageWidget(),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
-                                    child: Text(
-                                      'Comunidad',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText2
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: Color(0xFF57636C),
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                  );
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 4),
+                                      child: Icon(
+                                        Icons.supervised_user_circle_sharp,
+                                        color: Color(0xFF736CED),
+                                        size: 44,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 4, 0, 0),
+                                      child: Text(
+                                        'Comunidad',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText2
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Color(0xFF736CED),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -292,7 +313,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         0, 0, 0, 4),
                                     child: Icon(
                                       Icons.add_comment_rounded,
-                                      color: Color(0xFF57636C),
+                                      color: Color(0xFF736CED),
                                       size: 44,
                                     ),
                                   ),
@@ -305,7 +326,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           .bodyText2
                                           .override(
                                             fontFamily: 'Outfit',
-                                            color: Color(0xFF57636C),
+                                            color: Color(0xFF736CED),
                                             fontSize: 12,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -355,7 +376,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   children: [
                                     Icon(
                                       Icons.face,
-                                      color: Color(0xFF57636C),
+                                      color: Color(0xFF736CED),
                                       size: 44,
                                     ),
                                     Padding(
@@ -367,7 +388,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             .bodyText2
                                             .override(
                                               fontFamily: 'Outfit',
-                                              color: Color(0xFF57636C),
+                                              color: Color(0xFF736CED),
                                               fontSize: 12,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -396,7 +417,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         'Categorías',
                         style: FlutterFlowTheme.of(context).subtitle2.override(
                               fontFamily: 'Outfit',
-                              color: Color(0xFF57636C),
+                              color: Color(0xFF736CED),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -406,7 +427,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       'Ver todo',
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Outfit',
-                            color: Color(0xFF14181B),
+                            color: Color(0xFF736CED),
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
                           ),
@@ -425,8 +446,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: SizedBox(
                           width: 50,
                           height: 50,
-                          child: CircularProgressIndicator(
+                          child: SpinKitChasingDots(
                             color: FlutterFlowTheme.of(context).primaryColor,
+                            size: 50,
                           ),
                         ),
                       );
@@ -467,13 +489,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.network(
-                                    wrapCategoriesRecord.image!,
-                                    width: double.infinity,
-                                    height: 115,
-                                    fit: BoxFit.cover,
+                                InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        duration: Duration(milliseconds: 400),
+                                        reverseDuration:
+                                            Duration(milliseconds: 400),
+                                        child: NutritionPageWidget(),
+                                      ),
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.network(
+                                      wrapCategoriesRecord.image!,
+                                      width: double.infinity,
+                                      height: 115,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                                 Padding(
@@ -485,9 +521,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .subtitle1
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF14181B),
+                                          color: Color(0xFF4B39EF),
                                           fontSize: 18,
-                                          fontWeight: FontWeight.normal,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                   ),
                                 ),
@@ -500,9 +536,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .bodyText2
                                         .override(
                                           fontFamily: 'Outfit',
-                                          color: Color(0xFF57636C),
+                                          color: Color(0xFF736CED),
                                           fontSize: 12,
-                                          fontWeight: FontWeight.normal,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                 ),

@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResetPasswordWidget extends StatefulWidget {
@@ -51,7 +52,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                         buttonSize: 50,
                         icon: Icon(
                           Icons.arrow_back_rounded,
-                          color: Color(0xFF0F1113),
+                          color: Color(0xFF4B39EF),
                           size: 24,
                         ),
                         onPressed: () async {
@@ -65,7 +66,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                         'Regresar',
                         style: FlutterFlowTheme.of(context).title1.override(
                               fontFamily: 'Outfit',
-                              color: Color(0xFF0F1113),
+                              color: Color(0xFF4B39EF),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -80,7 +81,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                   'Olvidé mi contraseña',
                   style: FlutterFlowTheme.of(context).title1.override(
                         fontFamily: 'Outfit',
-                        color: Color(0xFF0F1113),
+                        color: Color(0xFF4B39EF),
                         fontSize: 32,
                         fontWeight: FontWeight.w500,
                       ),
@@ -110,7 +111,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                         'Te enviaremos un correo electrónico con un enlace para restablecer tu contraseña, ingrese el correo electrónico asociado con su cuenta a continuación.',
                         style: FlutterFlowTheme.of(context).bodyText2.override(
                               fontFamily: 'Outfit',
-                              color: Color(0xFF57636C),
+                              color: Color(0xFF9F9FED),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
@@ -174,7 +175,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                   ),
                   style: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Outfit',
-                        color: Color(0xFF0F1113),
+                        color: Color(0xFF736CED),
                         fontSize: 14,
                         fontWeight: FontWeight.normal,
                       ),
@@ -204,7 +205,7 @@ class _ResetPasswordWidgetState extends State<ResetPasswordWidget> {
                 options: FFButtonOptions(
                   width: 270,
                   height: 50,
-                  color: Color(0xFF0F1113),
+                  color: Color(0xFF4B39EF),
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily: 'Outfit',
                         color: Colors.white,

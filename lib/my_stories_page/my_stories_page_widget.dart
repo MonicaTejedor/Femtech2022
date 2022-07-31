@@ -1,9 +1,12 @@
 import '../backend/backend.dart';
+import '../create_story_page/create_story_page_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../view_storie/view_storie_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyStoriesPageWidget extends StatefulWidget {
@@ -30,23 +33,45 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
           buttonSize: 54,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: Color(0xFF57636C),
+            color: Color(0xFF4B39EF),
             size: 24,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            Navigator.pop(context);
           },
         ),
         title: Text(
           'Mis historias',
           style: FlutterFlowTheme.of(context).title3.override(
                 fontFamily: 'Outfit',
-                color: Color(0xFF1D2429),
+                color: Color(0xFF4B39EF),
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
               ),
         ),
-        actions: [],
+        actions: [
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+            child: InkWell(
+              onTap: () async {
+                await Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.topToBottom,
+                    duration: Duration(milliseconds: 400),
+                    reverseDuration: Duration(milliseconds: 400),
+                    child: CreateStoryPageWidget(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.add_circle,
+                color: Color(0xFF4B39EF),
+                size: 40,
+              ),
+            ),
+          ),
+        ],
         centerTitle: false,
         elevation: 0,
       ),
@@ -69,8 +94,9 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                         child: SizedBox(
                           width: 50,
                           height: 50,
-                          child: CircularProgressIndicator(
+                          child: SpinKitChasingDots(
                             color: FlutterFlowTheme.of(context).primaryColor,
+                            size: 50,
                           ),
                         ),
                       );
@@ -155,9 +181,7 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                                   buttonSize: 30,
                                                   icon: Icon(
                                                     Icons.favorite_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
+                                                    color: Color(0xFF4B39EF),
                                                     size: 20,
                                                   ),
                                                   onPressed: () {
@@ -196,9 +220,7 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                                   buttonSize: 30,
                                                   icon: Icon(
                                                     Icons.chat_sharp,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
+                                                    color: Color(0xFF4B39EF),
                                                     size: 20,
                                                   ),
                                                   onPressed: () {
@@ -233,8 +255,17 @@ class _MyStoriesPageWidgetState extends State<MyStoriesPageWidget> {
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 400),
+                                          reverseDuration:
+                                              Duration(milliseconds: 400),
+                                          child: ViewStorieWidget(),
+                                        ),
+                                      );
                                     },
                                     text: 'Ver',
                                     options: FFButtonOptions(

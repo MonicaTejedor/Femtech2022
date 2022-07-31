@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../reset_password/reset_password_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,16 +57,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 10),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 5),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/template-screens-hpce0u/assets/xofl99y11az0/@3xlogo_primary_color_white.png',
-                    width: 240,
-                    height: 60,
-                    fit: BoxFit.fitWidth,
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      width: 70,
+                      height: 70,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Text(
+                    '\'s App',
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Roboto Condensed',
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                        ),
                   ),
                 ],
               ),
@@ -429,13 +442,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 0),
+                                      20, 10, 20, 0),
                                   child: TextFormField(
                                     controller: displayNameController,
                                     obscureText: false,
@@ -475,7 +488,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 24, 20, 24),
+                                              20, 15, 20, 15),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -489,7 +502,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 0),
+                                      20, 10, 20, 0),
                                   child: TextFormField(
                                     controller: ageCreateController,
                                     obscureText: false,
@@ -529,7 +542,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 24, 20, 24),
+                                              20, 15, 20, 15),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -544,7 +557,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 0),
+                                      20, 10, 20, 0),
                                   child: TextFormField(
                                     controller: emailAddressCreateController,
                                     obscureText: false,
@@ -585,7 +598,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 24, 20, 24),
+                                              20, 15, 20, 15),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -640,7 +653,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 24, 20, 24),
+                                              20, 15, 20, 15),
                                       suffixIcon: InkWell(
                                         onTap: () => setState(
                                           () => passwordCreateVisibility =
@@ -709,7 +722,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 24, 20, 24),
+                                              20, 15, 20, 15),
                                       suffixIcon: InkWell(
                                         onTap: () => setState(
                                           () => passwordConfirmVisibility =
@@ -762,7 +775,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               .bodyText1
                                               .override(
                                                 fontFamily: 'Poppins',
-                                                color: Color(0xFF141517),
+                                                color: Color(0xFF1A1717),
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
