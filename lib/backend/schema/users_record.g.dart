@@ -54,6 +54,19 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
+    value = object.ageCreate;
+    if (value != null) {
+      result
+        ..add('age_Create')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.pregnancy;
+    if (value != null) {
+      result
+        ..add('pregnancy')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.phoneNumber;
     if (value != null) {
       result
@@ -103,6 +116,14 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.createdTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
+        case 'age_Create':
+          result.ageCreate = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'pregnancy':
+          result.pregnancy = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'phone_number':
           result.phoneNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -132,6 +153,10 @@ class _$UsersRecord extends UsersRecord {
   @override
   final DateTime? createdTime;
   @override
+  final int? ageCreate;
+  @override
+  final bool? pregnancy;
+  @override
   final String? phoneNumber;
   @override
   final DocumentReference<Object?>? ffRef;
@@ -145,6 +170,8 @@ class _$UsersRecord extends UsersRecord {
       this.photoUrl,
       this.uid,
       this.createdTime,
+      this.ageCreate,
+      this.pregnancy,
       this.phoneNumber,
       this.ffRef})
       : super._();
@@ -165,6 +192,8 @@ class _$UsersRecord extends UsersRecord {
         photoUrl == other.photoUrl &&
         uid == other.uid &&
         createdTime == other.createdTime &&
+        ageCreate == other.ageCreate &&
+        pregnancy == other.pregnancy &&
         phoneNumber == other.phoneNumber &&
         ffRef == other.ffRef;
   }
@@ -175,10 +204,16 @@ class _$UsersRecord extends UsersRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, email.hashCode), displayName.hashCode),
-                        photoUrl.hashCode),
-                    uid.hashCode),
-                createdTime.hashCode),
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, email.hashCode),
+                                    displayName.hashCode),
+                                photoUrl.hashCode),
+                            uid.hashCode),
+                        createdTime.hashCode),
+                    ageCreate.hashCode),
+                pregnancy.hashCode),
             phoneNumber.hashCode),
         ffRef.hashCode));
   }
@@ -191,6 +226,8 @@ class _$UsersRecord extends UsersRecord {
           ..add('photoUrl', photoUrl)
           ..add('uid', uid)
           ..add('createdTime', createdTime)
+          ..add('ageCreate', ageCreate)
+          ..add('pregnancy', pregnancy)
           ..add('phoneNumber', phoneNumber)
           ..add('ffRef', ffRef))
         .toString();
@@ -220,6 +257,14 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   DateTime? get createdTime => _$this._createdTime;
   set createdTime(DateTime? createdTime) => _$this._createdTime = createdTime;
 
+  int? _ageCreate;
+  int? get ageCreate => _$this._ageCreate;
+  set ageCreate(int? ageCreate) => _$this._ageCreate = ageCreate;
+
+  bool? _pregnancy;
+  bool? get pregnancy => _$this._pregnancy;
+  set pregnancy(bool? pregnancy) => _$this._pregnancy = pregnancy;
+
   String? _phoneNumber;
   String? get phoneNumber => _$this._phoneNumber;
   set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
@@ -240,6 +285,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _photoUrl = $v.photoUrl;
       _uid = $v.uid;
       _createdTime = $v.createdTime;
+      _ageCreate = $v.ageCreate;
+      _pregnancy = $v.pregnancy;
       _phoneNumber = $v.phoneNumber;
       _ffRef = $v.ffRef;
       _$v = null;
@@ -269,6 +316,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             photoUrl: photoUrl,
             uid: uid,
             createdTime: createdTime,
+            ageCreate: ageCreate,
+            pregnancy: pregnancy,
             phoneNumber: phoneNumber,
             ffRef: ffRef);
     replace(_$result);

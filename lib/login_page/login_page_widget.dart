@@ -1,4 +1,5 @@
 import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -17,7 +18,7 @@ class LoginPageWidget extends StatefulWidget {
 
 class _LoginPageWidgetState extends State<LoginPageWidget> {
   TextEditingController? ageCreateController;
-  TextEditingController? fullNameCreateController;
+  TextEditingController? displayNameController;
   TextEditingController? emailAddressCreateController;
   TextEditingController? passwordCreateController;
   late bool passwordCreateVisibility;
@@ -33,7 +34,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   void initState() {
     super.initState();
     ageCreateController = TextEditingController();
-    fullNameCreateController = TextEditingController();
+    displayNameController = TextEditingController();
     emailAddressCreateController = TextEditingController();
     passwordCreateController = TextEditingController();
     passwordCreateVisibility = false;
@@ -436,7 +437,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20, 20, 20, 0),
                                   child: TextFormField(
-                                    controller: fullNameCreateController,
+                                    controller: displayNameController,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelStyle: FlutterFlowTheme.of(context)
@@ -538,6 +539,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
+                                    keyboardType: TextInputType.number,
                                   ),
                                 ),
                                 Padding(
@@ -806,6 +808,16 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         if (user == null) {
                                           return;
                                         }
+
+                                        final usersCreateData =
+                                            createUsersRecordData(
+                                          ageCreate: int.parse(
+                                              ageCreateController!.text),
+                                          pregnancy: checkboxListTileValue,
+                                        );
+                                        await UsersRecord.collection
+                                            .doc(user.uid)
+                                            .update(usersCreateData);
 
                                         await Navigator.pushAndRemoveUntil(
                                           context,

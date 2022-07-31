@@ -22,6 +22,11 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   @BuiltValueField(wireName: 'created_time')
   DateTime? get createdTime;
 
+  @BuiltValueField(wireName: 'age_Create')
+  int? get ageCreate;
+
+  bool? get pregnancy;
+
   @BuiltValueField(wireName: 'phone_number')
   String? get phoneNumber;
 
@@ -34,6 +39,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..displayName = ''
     ..photoUrl = ''
     ..uid = ''
+    ..ageCreate = 0
+    ..pregnancy = false
     ..phoneNumber = '';
 
   static CollectionReference get collection =>
@@ -63,6 +70,8 @@ Map<String, dynamic> createUsersRecordData({
   String? photoUrl,
   String? uid,
   DateTime? createdTime,
+  int? ageCreate,
+  bool? pregnancy,
   String? phoneNumber,
 }) {
   final firestoreData = serializers.toFirestore(
@@ -74,6 +83,8 @@ Map<String, dynamic> createUsersRecordData({
         ..photoUrl = photoUrl
         ..uid = uid
         ..createdTime = createdTime
+        ..ageCreate = ageCreate
+        ..pregnancy = pregnancy
         ..phoneNumber = phoneNumber,
     ),
   );

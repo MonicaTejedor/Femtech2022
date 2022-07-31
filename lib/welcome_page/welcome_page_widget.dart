@@ -92,7 +92,8 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'La app que ayuda  alas mamás a sentirsen mejor con ellas mismas y con su bebé',
+                                          'La app que ayuda  a las mamás a sentirse mejor con ellas mismas y con su bebé\n\n\n\nDesliza hacia arriba ',
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
