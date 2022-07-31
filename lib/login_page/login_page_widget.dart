@@ -762,10 +762,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               .bodyText1
                                               .override(
                                                 fontFamily: 'Poppins',
+                                                color: Color(0xFF141517),
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
-                                        tileColor: Color(0xFFF5F5F5),
+                                        tileColor: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
                                         activeColor:
                                             FlutterFlowTheme.of(context)
                                                 .primaryColor,
@@ -814,6 +816,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           ageCreate: int.parse(
                                               ageCreateController!.text),
                                           pregnancy: checkboxListTileValue,
+                                          displayName:
+                                              displayNameController!.text,
                                         );
                                         await UsersRecord.collection
                                             .doc(user.uid)

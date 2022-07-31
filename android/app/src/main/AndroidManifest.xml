@@ -2,7 +2,7 @@
     package="com.mycompany.momsapp"
     xmlns:tools="http://schemas.android.com/tools">
    <uses-permission android:name="android.permission.INTERNET"/>
-
+  <uses-permission android:name="android.permission.CAMERA"/>
    <application
         android:label="Moms App"
         tools:replace="android:label"
