@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../goals_page/goals_page_widget.dart';
 import '../nutrition_page/nutrition_page_widget.dart';
 import '../profile_page/profile_page_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -303,36 +304,50 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             child: Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 4),
-                                    child: Icon(
-                                      Icons.add_comment_rounded,
-                                      color: Color(0xFF736CED),
-                                      size: 44,
+                              child: InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.topToBottom,
+                                      duration: Duration(milliseconds: 400),
+                                      reverseDuration:
+                                          Duration(milliseconds: 400),
+                                      child: GoalsPageWidget(),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
-                                    child: Text(
-                                      'Hábitos',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText2
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: Color(0xFF736CED),
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                  );
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 0, 4),
+                                      child: Icon(
+                                        Icons.add_comment_rounded,
+                                        color: Color(0xFF736CED),
+                                        size: 44,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 4, 0, 0),
+                                      child: Text(
+                                        'Objetivos',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText2
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Color(0xFF736CED),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

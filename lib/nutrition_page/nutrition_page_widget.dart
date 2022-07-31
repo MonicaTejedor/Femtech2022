@@ -266,7 +266,7 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                             type: PageTransitionType.fade,
                                             child: FlutterFlowExpandedImageView(
                                               image: Image.asset(
-                                                'assets/images/15171.jpg',
+                                                'assets/images/7878.jpg',
                                                 fit: BoxFit.contain,
                                               ),
                                               allowRotation: true,
@@ -283,7 +283,7 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                           borderRadius:
                                               BorderRadius.circular(8),
                                           child: Image.asset(
-                                            'assets/images/15171.jpg',
+                                            'assets/images/7878.jpg',
                                             width: double.infinity,
                                             height: 400,
                                             fit: BoxFit.cover,
@@ -298,7 +298,7 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(4, 12, 0, 0),
                                 child: Text(
-                                  'Dieta y patrones de alimentación en niños de 6 meses a 2 años',
+                                  'Alimento para bebés y niños: una dieta balanceada',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .title3
@@ -323,7 +323,7 @@ class _NutritionPageWidgetState extends State<NutritionPageWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             4, 10, 16, 0),
                                         child: Text(
-                                          'A esta edad, su bebé probablemente comerá alrededor de 4 a 6 veces por día, pero comerá más en cada alimentación que en los primeros 6 meses.',
+                                          'Los bebés y niños consumen mucha energía y necesitan un buen equilibrio entre nutrientes y proteínas. Una dieta variada compuesta por los cinco grupos alimenticios asegurará un crecimiento saludable para su bebé.',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2

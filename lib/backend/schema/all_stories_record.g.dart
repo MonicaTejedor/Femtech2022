@@ -42,18 +42,6 @@ class _$AllStoriesRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.comentsCount;
-    if (value != null) {
-      result
-        ..add('coments_count')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
-    value = object.viewsCount;
-    if (value != null) {
-      result
-        ..add('views_count')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
-    }
     value = object.dateCreate;
     if (value != null) {
       result
@@ -110,14 +98,6 @@ class _$AllStoriesRecordSerializer
           result.contentStory = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'coments_count':
-          result.comentsCount = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
-        case 'views_count':
-          result.viewsCount = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
-          break;
         case 'date_create':
           result.dateCreate = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
@@ -151,10 +131,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
   @override
   final String? contentStory;
   @override
-  final int? comentsCount;
-  @override
-  final int? viewsCount;
-  @override
   final DateTime? dateCreate;
   @override
   final String? userStory;
@@ -171,8 +147,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
       {this.idStory,
       this.nameStory,
       this.contentStory,
-      this.comentsCount,
-      this.viewsCount,
       this.dateCreate,
       this.userStory,
       this.lovedStory,
@@ -194,8 +168,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
         idStory == other.idStory &&
         nameStory == other.nameStory &&
         contentStory == other.contentStory &&
-        comentsCount == other.comentsCount &&
-        viewsCount == other.viewsCount &&
         dateCreate == other.dateCreate &&
         userStory == other.userStory &&
         lovedStory == other.lovedStory &&
@@ -208,14 +180,8 @@ class _$AllStoriesRecord extends AllStoriesRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc($jc(0, idStory.hashCode),
-                                    nameStory.hashCode),
-                                contentStory.hashCode),
-                            comentsCount.hashCode),
-                        viewsCount.hashCode),
+                    $jc($jc($jc(0, idStory.hashCode), nameStory.hashCode),
+                        contentStory.hashCode),
                     dateCreate.hashCode),
                 userStory.hashCode),
             lovedStory.hashCode),
@@ -228,8 +194,6 @@ class _$AllStoriesRecord extends AllStoriesRecord {
           ..add('idStory', idStory)
           ..add('nameStory', nameStory)
           ..add('contentStory', contentStory)
-          ..add('comentsCount', comentsCount)
-          ..add('viewsCount', viewsCount)
           ..add('dateCreate', dateCreate)
           ..add('userStory', userStory)
           ..add('lovedStory', lovedStory)
@@ -253,14 +217,6 @@ class AllStoriesRecordBuilder
   String? _contentStory;
   String? get contentStory => _$this._contentStory;
   set contentStory(String? contentStory) => _$this._contentStory = contentStory;
-
-  int? _comentsCount;
-  int? get comentsCount => _$this._comentsCount;
-  set comentsCount(int? comentsCount) => _$this._comentsCount = comentsCount;
-
-  int? _viewsCount;
-  int? get viewsCount => _$this._viewsCount;
-  set viewsCount(int? viewsCount) => _$this._viewsCount = viewsCount;
 
   DateTime? _dateCreate;
   DateTime? get dateCreate => _$this._dateCreate;
@@ -288,8 +244,6 @@ class AllStoriesRecordBuilder
       _idStory = $v.idStory;
       _nameStory = $v.nameStory;
       _contentStory = $v.contentStory;
-      _comentsCount = $v.comentsCount;
-      _viewsCount = $v.viewsCount;
       _dateCreate = $v.dateCreate;
       _userStory = $v.userStory;
       _lovedStory = $v.lovedStory;
@@ -319,8 +273,6 @@ class AllStoriesRecordBuilder
             idStory: idStory,
             nameStory: nameStory,
             contentStory: contentStory,
-            comentsCount: comentsCount,
-            viewsCount: viewsCount,
             dateCreate: dateCreate,
             userStory: userStory,
             lovedStory: lovedStory,

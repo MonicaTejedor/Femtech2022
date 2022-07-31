@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_page/login_page_widget.dart';
+import '../nutrition_page/nutrition_page_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -255,13 +256,27 @@ class _HomePageNoAuthWidgetState extends State<HomePageNoAuthWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.network(
-                                      wrapCategoriesRecord.image!,
-                                      width: double.infinity,
-                                      height: 115,
-                                      fit: BoxFit.cover,
+                                  InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 400),
+                                          reverseDuration:
+                                              Duration(milliseconds: 400),
+                                          child: NutritionPageWidget(),
+                                        ),
+                                      );
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(
+                                        wrapCategoriesRecord.image!,
+                                        width: double.infinity,
+                                        height: 115,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                   Padding(
